@@ -1,1 +1,15 @@
-main
+{% if user.is_authenticated %}
+	<h1>welcom {{ user.username }}</h1>
+	<a href="/logout/">تسجيل الخروج</a>
+{% else %}
+	<a href="/login/">الرجاء تسجيل الدخول</a>
+{% endif %}
+
+
+{% if messages %}
+  {% for message in messages %}
+    <div class="alert alert-{{ message.tags }}">
+      {{ message }}
+    </div>
+  {% endfor %}
+{% endif %}
