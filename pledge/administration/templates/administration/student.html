@@ -2,3 +2,9 @@
 <br> List all student registered in the database, 
 <br> add new students using excel file,
 <br> download the template excel file.
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="update" />
+</form>

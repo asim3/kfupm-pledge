@@ -1,9 +1,12 @@
-from django.forms import Form, FileField
+from django.forms import ModelForm
+from .models import AddStudents
 
 
-class AddStudentForm(Form):
-    excel_file = FileField(upload_to='uploads/%Y/%m/%d/', max_length=100)
+class AddStudentsForm(ModelForm):
+    class Meta:
+        model = AddStudents
+        fields = ['excel_file']
 
     def form_valid(self, form):
-        """If the form is valid, redirect to the supplied URL."""
+        print('\n'*3, form.object)
         return HttpResponseRedirect(self.get_success_url())
