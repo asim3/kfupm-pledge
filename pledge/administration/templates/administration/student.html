@@ -3,7 +3,7 @@
 <br> add new students using excel file,
 <br> download the template excel file.
 
-<form method="POST">
+<form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="update" />

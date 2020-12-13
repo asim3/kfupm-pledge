@@ -24,9 +24,12 @@ class Pledge(Model):
     next_tearm = IntegerField()
     kfupm_gpa = DecimalField(
         max_digits=3, decimal_places=2, blank=True, null=True)
-    phone = IntegerField()
+    phone = IntegerField(null=True)
     phone_guardian = IntegerField(blank=True, null=True)
     # date
     date_update = DateTimeField(auto_now=True)
-    approved_date = DateTimeField()
+    approved_date = DateTimeField(null=True)
     is_approved = BooleanField(null=True)
+
+    def __str__(self):
+        return f"{self.student.username} - {self.is_approved}"
