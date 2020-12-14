@@ -1,10 +1,17 @@
 
-<br> List all student registered in the database, 
-<br> add new students using excel file,
-<br> download the template excel file.
+<h2>Add new students using excel file</h2>
 
-<form method="POST" enctype="multipart/form-data">
+<form id="excel_form" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
-    <input type="submit" value="update" />
+    <input id="submit_button" type="submit" value="update" />
 </form>
+
+<script>
+const form = document.getElementById('excel_form');
+
+form.addEventListener('submit', function (event) {
+    const submit_button = document.getElementById('submit_button');
+    submit_button.disabled = true;
+});
+</script>
