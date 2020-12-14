@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
+from django.utils.translation import gettext_lazy as _
 from pathlib import Path
 import os
 
@@ -105,9 +106,14 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ar-sa'
 
-TIME_ZONE = 'UTC'
+LANGUAGES = [
+    ('ar', _('Arabic')),
+    ('en', _('English')),
+]
+
+TIME_ZONE = 'Asia/Riyadh'
 
 USE_I18N = True
 
@@ -115,6 +121,9 @@ USE_L10N = True
 
 USE_TZ = True
 
+DATE_FORMAT = 'Y / m / d'
+
+DATETIME_FORMAT = 'Y / m / d P'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
