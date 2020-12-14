@@ -1,0 +1,128 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-12-14 15:40+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#: administration/apps.py:7
+msgid "aaaaaaaa"
+msgstr "يييييييييي"
+
+#: administration/forms.py:19
+msgid "Excel file is not valid!"
+msgstr ""
+
+#: administration/forms.py:28
+msgid "Student {} is already listed"
+msgstr ""
+
+#: administration/forms.py:31
+msgid "Student {} is not valid!"
+msgstr ""
+
+#: administration/forms.py:34
+msgid "Student {} national ID is not valid!"
+msgstr ""
+
+#: administration/forms.py:37
+msgid "Student {} next tearm is not valid!"
+msgstr ""
+
+#: administration/forms.py:41
+msgid "Student {} GPA is not valid!"
+msgstr ""
+
+#: administration/models.py:10
+msgid "Add Student"
+msgstr ""
+
+#: administration/models.py:11
+msgid "Add Students"
+msgstr ""
+
+#: pledge/settings.py:112
+msgid "Arabic"
+msgstr ""
+
+#: pledge/settings.py:113
+msgid "English"
+msgstr ""
+
+#: student/apps.py:7
+msgid "sssssss"
+msgstr "سسسسسسسسسسس"
+
+#: student/models.py:12
+msgid "Pledge"
+msgstr "تعهد"
+
+#: student/models.py:13
+msgid "Pledges"
+msgstr "التعهدات"
+
+#: student/models.py:23
+msgid "condition"
+msgstr "مشروط"
+
+#: student/models.py:24
+msgid "final"
+msgstr "نهائي"
+
+#: student/models.py:25
+msgid "dismiss"
+msgstr "إبعاد"
+
+#: student/models.py:28
+msgid "student"
+msgstr "طالب"
+
+#: student/models.py:29
+msgid "pledge_type"
+msgstr "نوع التعهد"
+
+#: student/models.py:31
+msgid "next_tearm"
+msgstr "الفصل التالي"
+
+#: student/models.py:32
+msgid "kfupm_gpa"
+msgstr "الرقم الجامعي"
+
+#: student/models.py:34
+msgid "phone"
+msgstr "الجوال"
+
+#: student/models.py:35
+msgid "phone_guardian"
+msgstr "جوال ولي الأمر"
+
+#: student/models.py:37
+msgid "date_update"
+msgstr "تاريخ التحديث"
+
+#: student/models.py:38
+msgid "approved_date"
+msgstr ""
+
+#: student/models.py:39
+msgid "is_approved"
+msgstr ""
+
+#: student/views.py:16
+msgid "Your pledge was updated successfully"
+msgstr ""

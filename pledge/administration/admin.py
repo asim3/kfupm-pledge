@@ -1,4 +1,9 @@
-from django.contrib import admin
+from django.contrib.admin import register, ModelAdmin
 from .models import AddStudents
+from .forms import AddStudentsForm
 
-admin.site.register(AddStudents)
+
+@register(AddStudents)
+class AddStudentsAdmin(ModelAdmin):
+    form = AddStudentsForm
+    add_form = AddStudentsForm

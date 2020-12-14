@@ -20,6 +20,10 @@ elif [ "$1" = "shell" ]; then
   python3 manage.py shell
 elif [ "$1" = "user" ]; then
   python3 manage.py createsuperuser
+elif [ "$1" = "tra" ]; then
+    if [ ! -d ./locale ]; then mkdir locale; fi;
+    python3 manage.py makemessages -l ar;
+    python3 manage.py compilemessages;
 elif [ "$1" = "help" ]; then
   echo "You can use:"
   echo "   ./run-me.sh install"
@@ -27,6 +31,7 @@ elif [ "$1" = "help" ]; then
   echo "   ./run-me.sh test"
   echo "   ./run-me.sh shell"
   echo "   ./run-me.sh user"
+  echo "   ./run-me.sh tra"
   echo "   ./run-me.sh"
 else
   python3 manage.py runserver
