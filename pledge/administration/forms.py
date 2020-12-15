@@ -28,7 +28,7 @@ class AddStudentsForm(ModelForm):
                             _("Student {} is already listed").format(kfupmid))
                 else:
                     raise ValidationError(
-                        _("Student {} is not valid!").format(kfupmid))
+                        _("Student number {} is not valid!").format(kfupmid))
                 if not isinstance(row[2].value, int):
                     raise ValidationError(
                         _("Student {} national ID is not valid!").format(kfupmid))

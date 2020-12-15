@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-14 15:40+0300\n"
+"POT-Creation-Date: 2020-12-15 16:11+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,43 +25,43 @@ msgstr "يييييييييي"
 
 #: administration/forms.py:19
 msgid "Excel file is not valid!"
-msgstr ""
+msgstr "ملف الإكسل غير صالح!"
 
 #: administration/forms.py:28
 msgid "Student {} is already listed"
-msgstr ""
+msgstr "الطالب {} موجود مسبقاَ"
 
 #: administration/forms.py:31
-msgid "Student {} is not valid!"
-msgstr ""
+msgid "Student number {} is not valid!"
+msgstr "رقم الطالب {} غير صالح"
 
 #: administration/forms.py:34
 msgid "Student {} national ID is not valid!"
-msgstr ""
+msgstr "رقم هوية الطالب {} غير صالح"
 
 #: administration/forms.py:37
 msgid "Student {} next tearm is not valid!"
-msgstr ""
+msgstr "رقم الفصل التالي للطالب  {} غير صالح"
 
 #: administration/forms.py:41
 msgid "Student {} GPA is not valid!"
-msgstr ""
+msgstr "معدل الطالب {} غير صالح"
 
-#: administration/models.py:10
+#: administration/models.py:37
 msgid "Add Student"
-msgstr ""
+msgstr "إضافة طالب"
 
-#: administration/models.py:11
+#: administration/models.py:38
 msgid "Add Students"
-msgstr ""
-
-#: pledge/settings.py:112
-msgid "Arabic"
-msgstr ""
+msgstr "إضافة الطلاب"
 
 #: pledge/settings.py:113
+msgid "Arabic"
+msgstr "العربية"
+
+#: pledge/settings.py:114
 msgid "English"
-msgstr ""
+msgstr "الإنجليزية"
 
 #: student/apps.py:7
 msgid "sssssss"
@@ -117,12 +117,12 @@ msgstr "تاريخ التحديث"
 
 #: student/models.py:38
 msgid "approved_date"
-msgstr ""
+msgstr "تاريخ الموافقة"
 
 #: student/models.py:39
 msgid "is_approved"
-msgstr ""
+msgstr "هل موافق"
 
 #: student/views.py:16
 msgid "Your pledge was updated successfully"
-msgstr ""
+msgstr "تم تحديث التعهد بنجاح"
