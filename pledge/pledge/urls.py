@@ -1,13 +1,20 @@
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls.i18n import i18n_patterns
+from django.conf.urls.static import static
+from django.conf import settings
+
 from django.contrib.auth.views import LoginView
 from student.views import HomeView, PledgeView
-from administration.views import StudentsView
 
-urlpatterns = [
+
+urlpatterns = i18n_patterns(
     path('login/', LoginView.as_view(), name='login'),
     path('pledge/', PledgeView.as_view(), name='pledge'),
-    path('admin/student/', StudentsView.as_view(), name='admin-student'),
     path('admin/', admin.site.urls),
     path('', HomeView.as_view(), name='home'),
-]
+)
+
+# Return a URL pattern for serving files in debug mode only.
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
