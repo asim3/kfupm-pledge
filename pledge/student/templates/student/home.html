@@ -1,6 +1,6 @@
 {% if user.is_authenticated %}
 	<h1>welcom {{ user.username }}</h1>
-	<a href="{% url 'admin:logout' %}">تسجيل الخروج</a>
+	<a href="{% url 'logout' %}">تسجيل الخروج</a>
 {% else %}
 	<a href="{% url 'login' %}">الرجاء تسجيل الدخول</a>
 {% endif %}
