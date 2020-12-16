@@ -1,4 +1,5 @@
 #/bin/sh
+# Version: 2
 if [ ! -d ./venv ]; then 
   python3 -m venv ./venv
 fi;
