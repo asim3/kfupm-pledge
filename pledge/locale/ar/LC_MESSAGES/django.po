@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-15 16:11+0300\n"
+"POT-Creation-Date: 2020-12-16 11:37+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -62,6 +62,21 @@ msgstr "العربية"
 #: pledge/settings.py:114
 msgid "English"
 msgstr "الإنجليزية"
+
+#: pledge/urls.py:12
+msgid "Readmission Pledge Forms"
+msgstr "نماذج تعهدات إعادة القبول"
+
+#: pledge/urls.py:13
+msgid "Admission"
+msgstr "القبول"
+
+#: pledge/urls.py:15
+msgid ""
+"You can add new students using an excel file by clicking on the add student "
+"link."
+msgstr ""
+"يمكنك إضافة طلاب جدد باستخدام ملف اكسل من خلال النقر على رابط إضافة طالب."
 
 #: student/apps.py:7
 msgid "sssssss"
@@ -122,6 +137,14 @@ msgstr "تاريخ الموافقة"
 #: student/models.py:39
 msgid "is_approved"
 msgstr "هل موافق"
+
+#: student/templates/student/home.html:6
+msgid "Logout"
+msgstr "تسجيل الخروج"
+
+#: student/templates/student/home.html:10
+msgid "Please login"
+msgstr "الرجاء تسجيل الدخول"
 
 #: student/views.py:16
 msgid "Your pledge was updated successfully"

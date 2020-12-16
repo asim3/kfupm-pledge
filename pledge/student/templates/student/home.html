@@ -1,8 +1,14 @@
+{% load i18n %} 
+
 {% if user.is_authenticated %}
 	<h1>welcom {{ user.username }}</h1>
-	<a href="{% url 'logout' %}">تسجيل الخروج</a>
+	<a href="{% url 'logout' %}">
+        {% translate "Logout" %}
+    </a>
 {% else %}
-	<a href="{% url 'login' %}">الرجاء تسجيل الدخول</a>
+	<a href="{% url 'login' %}">
+        {% translate "Please login" %}
+    </a>
 {% endif %}
 
 

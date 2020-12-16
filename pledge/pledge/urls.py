@@ -3,9 +3,17 @@ from django.urls import path, reverse_lazy
 from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.static import static
 from django.conf import settings
+from django.utils.translation import gettext_lazy as _
 
 from django.contrib.auth.views import LoginView, LogoutView
 from student.views import HomeView, PledgeView
+
+
+admin.site.site_header = _("Readmission Pledge Forms")
+admin.site.site_title = _("Admission")
+admin.site.index_title = _(
+    "You can add new students using an excel file by clicking on the add student link.")
+# admin.site.empty_value_display = _("empty")
 
 
 urlpatterns = i18n_patterns(
