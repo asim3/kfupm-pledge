@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from django.utils.translation import gettext_lazy as _
+from django.urls import reverse_lazy
 from pathlib import Path
 import os
 
@@ -40,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'administration',
     'student',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -135,7 +137,9 @@ MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-LOGIN_REDIRECT_URL = "/pledge/"
+LOGIN_URL = reverse_lazy('login')
+
+LOGIN_REDIRECT_URL = reverse_lazy('pledge')
 
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale'),

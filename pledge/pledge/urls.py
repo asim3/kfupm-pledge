@@ -5,8 +5,8 @@ from django.conf.urls.static import static
 from django.conf import settings
 from django.utils.translation import gettext_lazy as _
 
-from django.contrib.auth.views import LoginView, LogoutView
-from student.views import HomeView, PledgeView
+from django.contrib.auth.views import LogoutView
+from student.views import HomeView, PledgeView, LoginForAllView
 
 
 admin.site.site_header = _("Readmission Pledge Forms")
@@ -17,7 +17,7 @@ admin.site.index_title = _(
 
 
 urlpatterns = i18n_patterns(
-    path('login/', LoginView.as_view(), name='login'),
+    path('login/', LoginForAllView.as_view(), name='login'),
     path('logout/', LogoutView.as_view(next_page=reverse_lazy('home')), name='logout'),
     path('pledge/', PledgeView.as_view(), name='pledge'),
     path('admin/', admin.site.urls),

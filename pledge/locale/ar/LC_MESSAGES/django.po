@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-16 11:37+0300\n"
+"POT-Creation-Date: 2020-12-16 16:00+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -55,11 +55,11 @@ msgstr "إضافة طالب"
 msgid "Add Students"
 msgstr "إضافة الطلاب"
 
-#: pledge/settings.py:113
+#: pledge/settings.py:115
 msgid "Arabic"
 msgstr "العربية"
 
-#: pledge/settings.py:114
+#: pledge/settings.py:116
 msgid "English"
 msgstr "الإنجليزية"
 
@@ -138,14 +138,56 @@ msgstr "تاريخ الموافقة"
 msgid "is_approved"
 msgstr "هل موافق"
 
-#: student/templates/student/home.html:6
+#: student/templates/base/base.html:45
+#, fuzzy
+#| msgid "The Deanship of Admission and Registration welcomes you"
+msgid "The Deanship welcomes you"
+msgstr "عمادة القبول والتسجيل ترحب بكم"
+
+#: student/templates/base/base.html:64
+msgid "King Fahd University of Petroleum and Minerals ©"
+msgstr "جامعة الملك فهد للبترول والمعادن ©"
+
+#: student/templates/base/base.html:66
+msgid "All rights reserved"
+msgstr "جميع الحقوق محفوظة"
+
+#: student/templates/base/base.html:68
+msgid "Dhahran, 31261, Kingdom of Saudi Arabia"
+msgstr "الظهران، 31261، المملكة العربية السعودية"
+
+#: student/templates/base/base.html:72
+msgid "Phone"
+msgstr "الجوال"
+
+#: student/templates/base/base.html:79
+msgid "E-mail:"
+msgstr "البريد الإلكتروني"
+
+#: student/templates/base/head.html:7
+msgid "Admission and Registration"
+msgstr "عمادة القبول والتسجيل"
+
+#: student/templates/registration/login.html:13
+msgid "login"
+msgstr "تسجيل الدخول"
+
+#: student/templates/student/home.html:7
+msgid "Welcom"
+msgstr "مرحبا"
+
+#: student/templates/student/home.html:9
+msgid "Show Pledge"
+msgstr "عرض التعهد"
+
+#: student/templates/student/home.html:12
 msgid "Logout"
 msgstr "تسجيل الخروج"
 
-#: student/templates/student/home.html:10
+#: student/templates/student/home.html:16
 msgid "Please login"
 msgstr "الرجاء تسجيل الدخول"
 
-#: student/views.py:16
+#: student/views.py:18
 msgid "Your pledge was updated successfully"
 msgstr "تم تحديث التعهد بنجاح"
