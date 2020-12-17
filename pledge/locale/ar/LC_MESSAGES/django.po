@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-17 13:09+0300\n"
+"POT-Creation-Date: 2020-12-17 14:27+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -102,39 +102,63 @@ msgstr "نهائي"
 msgid "dismiss"
 msgstr "إبعاد"
 
-#: student/models.py:28
+#: student/models.py:38
+msgid "Healthy"
+msgstr "صحية"
+
+#: student/models.py:39
+msgid "Psychological"
+msgstr "نفسية"
+
+#: student/models.py:40
+msgid "Family circumstances"
+msgstr "ظروف أسرية"
+
+#: student/models.py:42
+msgid "Study difficulties related to (major / academic courses)"
+msgstr "صعوبات دراسية متعلقة (بالتخصص / مقررات دراسية)"
+
+#: student/models.py:43
+msgid "other"
+msgstr "اخرى"
+
+#: student/models.py:46
 msgid "student"
 msgstr "طالب"
 
-#: student/models.py:29
+#: student/models.py:47
 msgid "pledge_type"
 msgstr "نوع التعهد"
 
-#: student/models.py:31
+#: student/models.py:50
 msgid "next_tearm"
 msgstr "الفصل التالي"
 
-#: student/models.py:32
+#: student/models.py:51
 msgid "kfupm_gpa"
 msgstr "الرقم الجامعي"
 
-#: student/models.py:34
+#: student/models.py:53
 msgid "phone"
 msgstr "الجوال"
 
-#: student/models.py:35
+#: student/models.py:54
 msgid "phone_guardian"
 msgstr "جوال ولي الأمر"
 
-#: student/models.py:37
+#: student/models.py:55
+msgid "low_performance_reasons"
+msgstr "أسباب تدني الأداء"
+
+#: student/models.py:60
 msgid "date_update"
 msgstr "تاريخ التحديث"
 
-#: student/models.py:38
+#: student/models.py:61
 msgid "approved_date"
 msgstr "تاريخ الموافقة"
 
-#: student/models.py:39
+#: student/models.py:62
 msgid "is_approved"
 msgstr "هل موافق"
 
@@ -170,26 +194,33 @@ msgstr "عمادة القبول والتسجيل"
 msgid "login"
 msgstr "تسجيل الدخول"
 
-#: student/templates/student/home.html:21
+#: student/templates/student/home.html:15
 msgid "Welcom"
 msgstr "مرحبا"
 
-#: student/templates/student/home.html:23
+#: student/templates/student/home.html:19
+msgid "Your pledge was updated successfully on"
+msgstr "تم تحديث التعهد بنجاح في"
+
+#: student/templates/student/home.html:24
 msgid "Show Pledge"
 msgstr "عرض التعهد"
 
-#: student/templates/student/home.html:26
+#: student/templates/student/home.html:27
 msgid "Logout"
 msgstr "تسجيل الخروج"
 
-#: student/templates/student/home.html:30
-msgid "Please login"
-msgstr "الرجاء تسجيل الدخول"
+#: student/templates/student/pledge.html:19
+msgid "send"
+msgstr "إرسال"
 
-#: student/views.py:25
+#: student/views.py:23
 msgid "Your pledge was updated successfully"
 msgstr "تم تحديث التعهد بنجاح"
 
-#: student/views.py:34
+#: student/views.py:32
 msgid "Please contact Admission Department to add your pledge form"
 msgstr "يرجى التواصل مع قسم القبول لإضافة تعهدك"
+
+#~ msgid "Please login"
+#~ msgstr "الرجاء تسجيل الدخول"

@@ -3,11 +3,19 @@
 {% load i18n %}
 
 {% block content %}
-    {% if user.is_authenticated %}
-        <form method="POST">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <input type="submit" value="send" />
-        </form>
-    {% endif %}
+
+    {{ form|as_crispy_errors }}
+
+    <form method="POST">
+        {% csrf_token %}
+        {% if object.pledge_type == 'S' %}
+            {% include "student/condition.html" %}
+        {% elif object.pledge_type == 'D1' %}
+            {% include "student/final.html" %}
+        {% elif object.pledge_type == 'D' %}
+            {% include "student/dismiss.html" %}
+        {% endif %}
+        <br><br>
+        <input class="btn btn-primary" type="submit" value="{% translate 'send' %}" />
+    </form>
 {% endblock %}

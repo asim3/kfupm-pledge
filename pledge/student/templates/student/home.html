@@ -3,26 +3,27 @@
 {% load i18n %}
 
 {% block content %}
-    {% if user.is_authenticated %}
-        <h1>{% translate "Welcom" %} {{ user.first_name }}</h1>
-        <a class="btn btn-outline-primary" href="{% url 'pledge' %}">
-            {% translate "Show Pledge" %}
-        </a>
-        <a class="btn btn-outline-danger" href="{% url 'logout' %}">
-            {% translate "Logout" %}
-        </a>
-    {% else %}
-        <a class="btn btn-outline-danger" href="{% url 'login' %}">
-            {% translate "Please login" %}
-        </a>
-    {% endif %}
-
-
     {% if messages %}
     {% for message in messages %}
         <div class="alert alert-{{ message.tags }}">
-        {{ message }}
+            {{ message }}
         </div>
     {% endfor %}
     {% endif %}
+
+
+    <h1>{% translate "Welcom" %} {{ user.first_name }}</h1>
+
+    {% if object.approved_date is not None %}
+        <div class="alert alert-info">
+            {% translate "Your pledge was updated successfully on" %} : 
+            {{ object.approved_date }}
+        </div>
+    {% endif %}
+    <a class="btn btn-outline-primary" href="{% url 'pledge' %}">
+        {% translate "Show Pledge" %}
+    </a>
+    <a class="btn btn-outline-danger" href="{% url 'logout' %}">
+        {% translate "Logout" %}
+    </a>
 {% endblock %}
