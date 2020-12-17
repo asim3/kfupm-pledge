@@ -8,7 +8,7 @@ from django.utils.translation import gettext_lazy as _
 class Pledge(Model):
 
     class Meta:
-        ordering = ["date_update"]
+        ordering = ["date_added"]
         verbose_name = _('Pledge')
         verbose_name_plural = _("Pledges")
 
@@ -25,24 +25,6 @@ class Pledge(Model):
                 (cls.DISMISS, _('dismiss')),
             )
 
-    class LowPerformanceReasons:
-        HEALTHY = 'HEALTHY'
-        PHYSICAL = 'PHYSICAL'
-        FAMILY = 'FAMILY'
-        STUDY = 'STUDY'
-        OTHER = 'OTHER'
-
-        @classmethod
-        def choices(cls):
-            return (
-                (cls.HEALTHY, _('Healthy')),
-                (cls.PHYSICAL, _('Psychological')),
-                (cls.FAMILY, _('Family circumstances')),
-                (cls.STUDY, _(
-                    'Study difficulties related to (major / academic courses)')),
-                (cls.OTHER, _('other')),
-            )
-
     student = ForeignKey(User, on_delete=CASCADE, verbose_name=_('student'))
     pledge_type = CharField(_('pledge_type'),
                             max_length=2,
@@ -53,10 +35,8 @@ class Pledge(Model):
     phone = IntegerField(_('phone'), null=True)
     phone_guardian = IntegerField(_('phone_guardian'), blank=True, null=True)
     low_performance_reasons = CharField(_('low_performance_reasons'),
-                                        max_length=10,
-                                        null=True,
-                                        choices=LowPerformanceReasons.choices())
+                                        max_length=100, null=True,)
     # date
-    date_update = DateTimeField(_('date_update'), auto_now=True)
-    approved_date = DateTimeField(_('approved_date'), null=True)
+    date_added = DateTimeField(_('date_added'), auto_now_add=True)
+    approved_date = DateTimeField(_('approved_date'), auto_now=True)
     is_approved = BooleanField(_('is_approved'), null=True)

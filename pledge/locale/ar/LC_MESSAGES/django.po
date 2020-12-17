@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-17 14:27+0300\n"
+"POT-Creation-Date: 2020-12-17 15:53+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -151,7 +151,7 @@ msgid "low_performance_reasons"
 msgstr "أسباب تدني الأداء"
 
 #: student/models.py:60
-msgid "date_update"
+msgid "date_added"
 msgstr "تاريخ التحديث"
 
 #: student/models.py:61
@@ -206,11 +206,11 @@ msgstr "تم تحديث التعهد بنجاح في"
 msgid "Show Pledge"
 msgstr "عرض التعهد"
 
-#: student/templates/student/home.html:27
+#: student/templates/student/home.html:29
 msgid "Logout"
 msgstr "تسجيل الخروج"
 
-#: student/templates/student/pledge.html:19
+#: student/templates/student/pledge.html:20
 msgid "send"
 msgstr "إرسال"
 

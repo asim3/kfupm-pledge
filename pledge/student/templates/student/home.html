@@ -19,10 +19,12 @@
             {% translate "Your pledge was updated successfully on" %} : 
             {{ object.approved_date }}
         </div>
-    {% endif %}
+    {% else %}
     <a class="btn btn-outline-primary" href="{% url 'pledge' %}">
         {% translate "Show Pledge" %}
     </a>
+    {% endif %}
+
     <a class="btn btn-outline-danger" href="{% url 'logout' %}">
         {% translate "Logout" %}
     </a>

@@ -5,13 +5,13 @@ from .models import Pledge
 @register(Pledge)
 class AdminPledge(ModelAdmin):
     search_fields = ('student', 'phone', 'phone_guardian')
-    ordering = ('date_update',)
+    ordering = ('date_added',)
     list_display = (
         'student',
         'pledge_type',
         'next_tearm',
         'kfupm_gpa',
-        'date_update',
+        'date_added',
         'phone',
         'phone_guardian',
         'approved_date',
