@@ -1,16 +1,19 @@
-from django.views.generic import TemplateView, UpdateView
+from django.views.generic import UpdateView, DetailView
 from django.urls import reverse_lazy
+from django.http import HttpResponseRedirect
 from django.utils.translation import gettext_lazy as _
-from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib.messages.views import SuccessMessageMixin, messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView
 
-from .models import Pledge
 from .forms import PledgeForm
 
 
-class HomeView(LoginRequiredMixin, TemplateView):
+class HomeView(LoginRequiredMixin, DetailView):
     template_name = "student/home.html"
+
+    def get_object(self):
+        return self.request.user.pledge_set.order_by('-id').first()
 
 
 class PledgeView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
@@ -20,14 +23,15 @@ class PledgeView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     success_message = _("Your pledge was updated successfully")
 
     def get_object(self, queryset=None):
-        try:
-            # Get the single item from the filtered queryset
-            obj = Pledge.objects.filter(
-                student=self.request.user).order_by('-id')[1]
-        except Pledge.DoesNotExist:
-            raise Http404(_("No %(verbose_name)s found matching the query") %
-                          {'verbose_name': Pledge.model._meta.verbose_name})
-        return obj
+        return self.request.user.pledge_set.order_by('-id').first()
+
+    def get(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        if not self.object:
+            messages.warning(self.request, _(
+                'Please contact Admission Department to add your pledge form'))
+            return HttpResponseRedirect(reverse_lazy("home"))
+        return super().get(request, *args, **kwargs)
 
 
 class LoginForAllView(LoginView):

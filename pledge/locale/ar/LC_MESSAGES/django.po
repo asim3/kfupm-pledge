@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-16 16:00+0300\n"
+"POT-Creation-Date: 2020-12-17 13:09+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -139,8 +139,6 @@ msgid "is_approved"
 msgstr "هل موافق"
 
 #: student/templates/base/base.html:45
-#, fuzzy
-#| msgid "The Deanship of Admission and Registration welcomes you"
 msgid "The Deanship welcomes you"
 msgstr "عمادة القبول والتسجيل ترحب بكم"
 
@@ -172,22 +170,26 @@ msgstr "عمادة القبول والتسجيل"
 msgid "login"
 msgstr "تسجيل الدخول"
 
-#: student/templates/student/home.html:7
+#: student/templates/student/home.html:21
 msgid "Welcom"
 msgstr "مرحبا"
 
-#: student/templates/student/home.html:9
+#: student/templates/student/home.html:23
 msgid "Show Pledge"
 msgstr "عرض التعهد"
 
-#: student/templates/student/home.html:12
+#: student/templates/student/home.html:26
 msgid "Logout"
 msgstr "تسجيل الخروج"
 
-#: student/templates/student/home.html:16
+#: student/templates/student/home.html:30
 msgid "Please login"
 msgstr "الرجاء تسجيل الدخول"
 
-#: student/views.py:18
+#: student/views.py:25
 msgid "Your pledge was updated successfully"
 msgstr "تم تحديث التعهد بنجاح"
+
+#: student/views.py:34
+msgid "Please contact Admission Department to add your pledge form"
+msgstr "يرجى التواصل مع قسم القبول لإضافة تعهدك"
