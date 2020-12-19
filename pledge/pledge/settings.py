@@ -14,6 +14,7 @@ from django.utils.translation import gettext_lazy as _
 from django.urls import reverse_lazy
 from pathlib import Path
 import os
+import django_heroku
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -144,3 +145,6 @@ LOGIN_REDIRECT_URL = reverse_lazy('pledge')
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale'),
 )
+
+
+django_heroku.settings(locals())
