@@ -1,5 +1,5 @@
 #/bin/sh
-# Version: 2
+# Version: 3
 if [ ! -d ./venv ]; then 
   python3 -m venv ./venv
 fi;
@@ -12,7 +12,7 @@ if [ "$1" = "install" ]; then
   pip3 install -r ../requirements.txt
   python3 manage.py makemigrations
   python3 manage.py migrate
-  python3 manage.py runserver
+  python3 manage.py collectstatic --noinput && python3 manage.py runserver
 elif [ "$1" = "newapp" ]; then
   python3 manage.py startapp $2
 elif [ "$1" = "test" ]; then
