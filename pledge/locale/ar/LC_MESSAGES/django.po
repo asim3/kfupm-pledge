@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-17 15:53+0300\n"
+"POT-Creation-Date: 2020-12-20 12:26+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -55,11 +55,11 @@ msgstr "إضافة طالب"
 msgid "Add Students"
 msgstr "إضافة الطلاب"
 
-#: pledge/settings.py:115
+#: pledge/settings.py:116
 msgid "Arabic"
 msgstr "العربية"
 
-#: pledge/settings.py:116
+#: pledge/settings.py:117
 msgid "English"
 msgstr "الإنجليزية"
 
@@ -82,6 +82,26 @@ msgstr ""
 msgid "sssssss"
 msgstr "سسسسسسسسسسس"
 
+#: student/forms.py:18
+msgid "Healthy"
+msgstr "صحية"
+
+#: student/forms.py:19
+msgid "Psychological"
+msgstr "نفسية"
+
+#: student/forms.py:20
+msgid "Family circumstances"
+msgstr "ظروف أسرية"
+
+#: student/forms.py:22
+msgid "Study difficulties related to (major / academic courses)"
+msgstr "صعوبات دراسية متعلقة (بالتخصص / مقررات دراسية)"
+
+#: student/forms.py:23
+msgid "other"
+msgstr "اخرى"
+
 #: student/models.py:12
 msgid "Pledge"
 msgstr "تعهد"
@@ -102,63 +122,43 @@ msgstr "نهائي"
 msgid "dismiss"
 msgstr "إبعاد"
 
-#: student/models.py:38
-msgid "Healthy"
-msgstr "صحية"
-
-#: student/models.py:39
-msgid "Psychological"
-msgstr "نفسية"
-
-#: student/models.py:40
-msgid "Family circumstances"
-msgstr "ظروف أسرية"
-
-#: student/models.py:42
-msgid "Study difficulties related to (major / academic courses)"
-msgstr "صعوبات دراسية متعلقة (بالتخصص / مقررات دراسية)"
-
-#: student/models.py:43
-msgid "other"
-msgstr "اخرى"
-
-#: student/models.py:46
+#: student/models.py:28
 msgid "student"
 msgstr "طالب"
 
-#: student/models.py:47
+#: student/models.py:29
 msgid "pledge_type"
 msgstr "نوع التعهد"
 
-#: student/models.py:50
+#: student/models.py:32
 msgid "next_tearm"
 msgstr "الفصل التالي"
 
-#: student/models.py:51
+#: student/models.py:33
 msgid "kfupm_gpa"
-msgstr "الرقم الجامعي"
+msgstr "المعدل المطلوب"
 
-#: student/models.py:53
+#: student/models.py:35
 msgid "phone"
 msgstr "الجوال"
 
-#: student/models.py:54
+#: student/models.py:36
 msgid "phone_guardian"
 msgstr "جوال ولي الأمر"
 
-#: student/models.py:55
+#: student/models.py:37
 msgid "low_performance_reasons"
 msgstr "أسباب تدني الأداء"
 
-#: student/models.py:60
+#: student/models.py:40
 msgid "date_added"
 msgstr "تاريخ التحديث"
 
-#: student/models.py:61
+#: student/models.py:41
 msgid "approved_date"
 msgstr "تاريخ الموافقة"
 
-#: student/models.py:62
+#: student/models.py:42
 msgid "is_approved"
 msgstr "هل موافق"
 
@@ -210,7 +210,7 @@ msgstr "عرض التعهد"
 msgid "Logout"
 msgstr "تسجيل الخروج"
 
-#: student/templates/student/pledge.html:20
+#: student/templates/student/pledge.html:17
 msgid "send"
 msgstr "إرسال"
 
