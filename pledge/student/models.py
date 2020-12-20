@@ -38,5 +38,5 @@ class Pledge(Model):
                                         max_length=100, null=True,)
     # date
     date_added = DateTimeField(_('date_added'), auto_now_add=True)
-    approved_date = DateTimeField(_('approved_date'), auto_now=True)
+    approved_date = DateTimeField(_('approved_date'), null=True)
     is_approved = BooleanField(_('is_approved'), null=True)

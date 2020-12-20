@@ -36,3 +36,9 @@ class PledgeForm(ModelForm):
                   'phone',
                   'phone_guardian',
                   'is_approved', ]
+
+    def save(self, commit=True):
+        instance = super().save(commit=False)
+        instance.approved_date = datetime.now()
+        instance.save()
+        return instance
