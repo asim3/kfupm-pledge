@@ -12,13 +12,17 @@
     <style>
         body {
             background-image: url({% static 'base/bg.jpeg' %});
+            direction: rtl!important;
+            text-align: right!important;
+            {% comment %} 
             {% if LANGUAGE_CODE == 'ar' %}
                 direction: rtl!important;
                 text-align: right!important;
             {% else %}
                 direction: ltr!important;
                 text-align: left!important;
-            {% endif %}
+            {% endif %} 
+            {% endcomment %}
         }
         @font-face {
             font-family: "hacen_tunisia_ltregular";
