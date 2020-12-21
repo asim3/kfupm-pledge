@@ -59,7 +59,7 @@ class AuthenticationForm(AuthenticationFormBase):
         widget=TextInput(attrs={'autofocus': True})
     )
     password = CharField(
-        label="رقم بطاقة الأحوال",
+        label="رقم بطاقة الهوية الوطنية",
         strip=False,
         widget=PasswordInput(attrs={'autocomplete': 'current-password'}),
     )
