@@ -142,9 +142,12 @@ LOGIN_URL = reverse_lazy('login')
 
 LOGIN_REDIRECT_URL = reverse_lazy('pledge')
 
+LOGOUT_REDIRECT_URL = reverse_lazy('home')
+
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale'),
 )
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 django_heroku.settings(locals())

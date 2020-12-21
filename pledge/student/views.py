@@ -31,6 +31,8 @@ class PledgeView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
             messages.warning(self.request, _(
                 'Please contact Admission Department to add your pledge form'))
             return HttpResponseRedirect(reverse_lazy("home"))
+        elif self.object.approved_date is not None:
+            return HttpResponseRedirect(reverse_lazy("home"))
         return super().get(request, *args, **kwargs)
 
 
