@@ -32,10 +32,16 @@ class Pledge(Model):
     next_tearm = IntegerField(_('next_tearm'), )
     kfupm_gpa = DecimalField(_('kfupm_gpa'),
                              max_digits=3, decimal_places=2, blank=True, null=True)
+    # info
     phone = IntegerField(_('phone'), null=True)
     phone_guardian = IntegerField(_('phone_guardian'), blank=True, null=True)
+    guardian_relation = CharField(
+        _('guardian_relation'), max_length=100, null=True)
+    # performance
     low_performance_reasons = CharField(_('low_performance_reasons'),
-                                        max_length=100, null=True,)
+                                        max_length=100, null=True)
+    low_performance_other_reasons = CharField(
+        _('low_performance_other_reasons'), null=True)
     # date
     date_added = DateTimeField(_('date_added'), auto_now_add=True)
     approved_date = DateTimeField(_('approved_date'), null=True)

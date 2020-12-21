@@ -23,6 +23,7 @@ class LowPerformanceReasons:
             (cls.STUDY, "صعوبات دراسية متعلقة (بالتخصص / مقررات دراسية)"),
             (cls.OTHER, "اخرى"),
         )
+        # TODO: replace next with above
         # return (
         #     (cls.HEALTHY, _('Healthy')),
         #     (cls.PHYSICAL, _('Psychological')),
@@ -55,10 +56,12 @@ class PledgeForm(ModelForm):
 
 class AuthenticationForm(AuthenticationFormBase):
     username = UsernameField(
+        # TODO: add translation
         label="الرقم الجامعي",
         widget=TextInput(attrs={'autofocus': True})
     )
     password = CharField(
+        # TODO: add translation
         label="رقم بطاقة الهوية الوطنية",
         strip=False,
         widget=PasswordInput(attrs={'autocomplete': 'current-password'}),
