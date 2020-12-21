@@ -11,9 +11,17 @@
 <br>
 وتذكر  : ان الشخص الايجابي هو الذي يعزم على صنع فرص جديدة أكثر من تلك التي ضاعت منه
 <br><br>
+
+{% if form.errors.low_performance_reasons %}
+        <div class="alert alert-danger">
+            الرجاء إختيار سبب تدني الأداء
+        </div>
+{% endif %}
+
 أسباب تدني الأداء في الفصل الحالي يعود الى: 
 {{ form.low_performance_reasons }}
 
+{{ form.low_performance_other_reasons }}
 
 <hr class="mt-5">
 
@@ -54,7 +62,7 @@
 <br><br>
 
 صلة القرابة:
-{{ form.phone }}
+{{ form.guardian_relation }}
 <br><br>
 
 {{ form.is_approved }}

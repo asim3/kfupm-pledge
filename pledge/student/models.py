@@ -36,12 +36,12 @@ class Pledge(Model):
     phone = IntegerField(_('phone'), null=True)
     phone_guardian = IntegerField(_('phone_guardian'), blank=True, null=True)
     guardian_relation = CharField(
-        _('guardian_relation'), max_length=100, null=True)
+        _('guardian_relation'), max_length=100, blank=True, null=True)
     # performance
     low_performance_reasons = CharField(_('low_performance_reasons'),
                                         max_length=100, null=True)
     low_performance_other_reasons = CharField(
-        _('low_performance_other_reasons'), null=True)
+        _('low_performance_other_reasons'), max_length=300, blank=True, null=True)
     # date
     date_added = DateTimeField(_('date_added'), auto_now_add=True)
     approved_date = DateTimeField(_('approved_date'), null=True)

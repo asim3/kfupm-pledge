@@ -43,8 +43,10 @@ class PledgeForm(ModelForm):
     class Meta:
         model = Pledge
         fields = ['low_performance_reasons',
+                  'low_performance_other_reasons',
                   'phone',
                   'phone_guardian',
+                  'guardian_relation',
                   'is_approved', ]
 
     def save(self, commit=True):

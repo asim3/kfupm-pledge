@@ -20,7 +20,8 @@ class PledgeView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     template_name = "student/pledge.html"
     form_class = PledgeForm
     success_url = reverse_lazy("home")
-    success_message = _("Your pledge was updated successfully")
+    # TODO: add translation
+    success_message = "شكراً لك لقد قمت بالانتهاء من تعبئة نموذج الإقرار "
 
     def get_object(self, queryset=None):
         return self.request.user.pledge_set.order_by('-id').first()

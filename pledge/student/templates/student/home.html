@@ -16,8 +16,13 @@
 
     {% if object.approved_date is not None %}
         <div class="alert alert-info">
-            {% translate "Your pledge was updated successfully on" %} : 
+            {% comment %} TODO: add translation {% endcomment %}
+            شكراً لك لقد قمت بالانتهاء من تعبئة نموذج الإقرار بتاريخ
             {{ object.approved_date }}
+            وعليك مراجعة موقع مسجل الجامعة لمعرفة مواعيد التسجيل ونتمنى لك التوفيق
+            {% comment %} 
+            {% translate "Your pledge was updated successfully on" %} :  
+            {% endcomment %}
         </div>
     {% else %}
     <a class="btn btn-outline-primary" href="{% url 'pledge' %}">
