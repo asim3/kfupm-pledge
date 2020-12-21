@@ -6,7 +6,7 @@ from django.contrib.messages.views import SuccessMessageMixin, messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView
 
-from .forms import PledgeForm
+from .forms import PledgeForm, AuthenticationForm
 
 
 class HomeView(LoginRequiredMixin, DetailView):
@@ -35,6 +35,8 @@ class PledgeView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
 
 
 class LoginForAllView(LoginView):
+    form_class = AuthenticationForm
+
     def get_success_url(self):
         if self.request.user.is_staff:
             return reverse_lazy("admin:index")

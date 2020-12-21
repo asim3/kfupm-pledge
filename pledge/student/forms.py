@@ -1,7 +1,9 @@
 from datetime import datetime
 from django.utils.translation import gettext_lazy as _
 from django.forms import (
-    ModelForm, MultipleChoiceField, CheckboxSelectMultiple, CheckboxInput, BooleanField)
+    ModelForm, CharField, TextInput, PasswordInput, BooleanField,
+    MultipleChoiceField, CheckboxSelectMultiple, CheckboxInput,)
+from django.contrib.auth.forms import UsernameField, AuthenticationForm as AuthenticationFormBase
 from .models import Pledge
 
 
@@ -15,13 +17,20 @@ class LowPerformanceReasons:
     @classmethod
     def choices(cls):
         return (
-            (cls.HEALTHY, _('Healthy')),
-            (cls.PHYSICAL, _('Psychological')),
-            (cls.FAMILY, _('Family circumstances')),
-            (cls.STUDY, _(
-                'Study difficulties related to (major / academic courses)')),
-            (cls.OTHER, _('other')),
+            (cls.HEALTHY, "صحية"),
+            (cls.PHYSICAL, "نفسية"),
+            (cls.FAMILY, "ظروف أسرية"),
+            (cls.STUDY, "صعوبات دراسية متعلقة (بالتخصص / مقررات دراسية)"),
+            (cls.OTHER, "اخرى"),
         )
+        # return (
+        #     (cls.HEALTHY, _('Healthy')),
+        #     (cls.PHYSICAL, _('Psychological')),
+        #     (cls.FAMILY, _('Family circumstances')),
+        #     (cls.STUDY, _(
+        #         'Study difficulties related to (major / academic courses)')),
+        #     (cls.OTHER, _('other')),
+        # )
 
 
 class PledgeForm(ModelForm):
@@ -42,3 +51,15 @@ class PledgeForm(ModelForm):
         instance.approved_date = datetime.now()
         instance.save()
         return instance
+
+
+class AuthenticationForm(AuthenticationFormBase):
+    username = UsernameField(
+        label="الرقم الجامعي",
+        widget=TextInput(attrs={'autofocus': True})
+    )
+    password = CharField(
+        label="رقم بطاقة الأحوال",
+        strip=False,
+        widget=PasswordInput(attrs={'autocomplete': 'current-password'}),
+    )
