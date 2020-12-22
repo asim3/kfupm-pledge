@@ -11,7 +11,9 @@
         {% elif object.pledge_type == 'D' %}
             {% include "student/dismiss.html" %} 
         {% endif %}
+        
         <br><br>
+
         {% if not object.pledge_type == 'D' %}
         {{ form.errors }}
         <br><br>
@@ -24,5 +26,9 @@
             value="{% translate 'send' %}" /> 
             {% endcomment %}
         {% endif %}
+
+        <a class="btn btn-outline-danger" href="{% url 'logout' %}">
+            {% translate "Logout" %}
+        </a>
     </form>
 {% endblock %}
