@@ -4,4 +4,3 @@ from django.utils.translation import gettext_lazy as _
 
 class StudentConfig(AppConfig):
     name = 'student'
-    verbose_name = _("sssssss")
