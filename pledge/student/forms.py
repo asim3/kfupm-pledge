@@ -1,7 +1,7 @@
 from datetime import datetime
 from django.utils.translation import gettext_lazy as _
 from django.forms import (
-    ModelForm, CharField, TextInput, PasswordInput, BooleanField,
+    ModelForm, CharField, TextInput, PasswordInput, BooleanField, Textarea,
     MultipleChoiceField, CheckboxSelectMultiple, CheckboxInput,)
 from django.contrib.auth.forms import UsernameField, AuthenticationForm as AuthenticationFormBase
 from .models import Pledge
@@ -48,6 +48,10 @@ class PledgeForm(ModelForm):
                   'phone_guardian',
                   'guardian_relation',
                   'is_approved', ]
+        widgets = {
+            'low_performance_other_reasons': Textarea(
+                attrs={'class': "mx-4", 'cols': 80, 'rows': 2}),
+        }
 
     def save(self, commit=True):
         instance = super().save(commit=False)

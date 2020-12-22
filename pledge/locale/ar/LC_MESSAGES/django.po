@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-20 12:26+0300\n"
+"POT-Creation-Date: 2020-12-22 15:08+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -82,26 +82,6 @@ msgstr ""
 msgid "sssssss"
 msgstr "سسسسسسسسسسس"
 
-#: student/forms.py:18
-msgid "Healthy"
-msgstr "صحية"
-
-#: student/forms.py:19
-msgid "Psychological"
-msgstr "نفسية"
-
-#: student/forms.py:20
-msgid "Family circumstances"
-msgstr "ظروف أسرية"
-
-#: student/forms.py:22
-msgid "Study difficulties related to (major / academic courses)"
-msgstr "صعوبات دراسية متعلقة (بالتخصص / مقررات دراسية)"
-
-#: student/forms.py:23
-msgid "other"
-msgstr "اخرى"
-
 #: student/models.py:12
 msgid "Pledge"
 msgstr "تعهد"
@@ -138,51 +118,57 @@ msgstr "الفصل التالي"
 msgid "kfupm_gpa"
 msgstr "المعدل المطلوب"
 
-#: student/models.py:35
+#: student/models.py:36
 msgid "phone"
 msgstr "الجوال"
 
-#: student/models.py:36
+#: student/models.py:37
 msgid "phone_guardian"
 msgstr "جوال ولي الأمر"
 
-#: student/models.py:37
+#: student/models.py:39
+msgid "guardian_relation"
+msgstr ""
+
+#: student/models.py:41
 msgid "low_performance_reasons"
 msgstr "أسباب تدني الأداء"
 
-#: student/models.py:40
+#: student/models.py:44
+#, fuzzy
+#| msgid "low_performance_reasons"
+msgid "low_performance_other_reasons"
+msgstr "أسباب تدني الأداء"
+
+#: student/models.py:46
 msgid "date_added"
 msgstr "تاريخ التحديث"
 
-#: student/models.py:41
+#: student/models.py:47
 msgid "approved_date"
 msgstr "تاريخ الموافقة"
 
-#: student/models.py:42
+#: student/models.py:48
 msgid "is_approved"
 msgstr "هل موافق"
 
-#: student/templates/base/base.html:45
-msgid "The Deanship welcomes you"
-msgstr "عمادة القبول والتسجيل ترحب بكم"
-
-#: student/templates/base/base.html:64
+#: student/templates/base/base.html:71
 msgid "King Fahd University of Petroleum and Minerals ©"
 msgstr "جامعة الملك فهد للبترول والمعادن ©"
 
-#: student/templates/base/base.html:66
+#: student/templates/base/base.html:73
 msgid "All rights reserved"
 msgstr "جميع الحقوق محفوظة"
 
-#: student/templates/base/base.html:68
+#: student/templates/base/base.html:75
 msgid "Dhahran, 31261, Kingdom of Saudi Arabia"
 msgstr "الظهران، 31261، المملكة العربية السعودية"
 
-#: student/templates/base/base.html:72
+#: student/templates/base/base.html:79
 msgid "Phone"
 msgstr "الجوال"
 
-#: student/templates/base/base.html:79
+#: student/templates/base/base.html:86
 msgid "E-mail:"
 msgstr "البريد الإلكتروني"
 
@@ -190,37 +176,51 @@ msgstr "البريد الإلكتروني"
 msgid "Admission and Registration"
 msgstr "عمادة القبول والتسجيل"
 
-#: student/templates/registration/login.html:13
-msgid "login"
-msgstr "تسجيل الدخول"
-
 #: student/templates/student/home.html:15
 msgid "Welcom"
 msgstr "مرحبا"
 
-#: student/templates/student/home.html:19
-msgid "Your pledge was updated successfully on"
-msgstr "تم تحديث التعهد بنجاح في"
-
-#: student/templates/student/home.html:24
+#: student/templates/student/home.html:31
 msgid "Show Pledge"
 msgstr "عرض التعهد"
 
-#: student/templates/student/home.html:29
+#: student/templates/student/home.html:36
 msgid "Logout"
 msgstr "تسجيل الخروج"
 
-#: student/templates/student/pledge.html:17
-msgid "send"
-msgstr "إرسال"
-
-#: student/views.py:23
-msgid "Your pledge was updated successfully"
-msgstr "تم تحديث التعهد بنجاح"
-
-#: student/views.py:32
+#: student/views.py:33
 msgid "Please contact Admission Department to add your pledge form"
 msgstr "يرجى التواصل مع قسم القبول لإضافة تعهدك"
+
+#~ msgid "Healthy"
+#~ msgstr "صحية"
+
+#~ msgid "Psychological"
+#~ msgstr "نفسية"
+
+#~ msgid "Family circumstances"
+#~ msgstr "ظروف أسرية"
+
+#~ msgid "Study difficulties related to (major / academic courses)"
+#~ msgstr "صعوبات دراسية متعلقة (بالتخصص / مقررات دراسية)"
+
+#~ msgid "other"
+#~ msgstr "اخرى"
+
+#~ msgid "The Deanship welcomes you"
+#~ msgstr "عمادة القبول والتسجيل ترحب بكم"
+
+#~ msgid "login"
+#~ msgstr "تسجيل الدخول"
+
+#~ msgid "Your pledge was updated successfully on"
+#~ msgstr "تم تحديث التعهد بنجاح في"
+
+#~ msgid "send"
+#~ msgstr "إرسال"
+
+#~ msgid "Your pledge was updated successfully"
+#~ msgstr "تم تحديث التعهد بنجاح"
 
 #~ msgid "Please login"
 #~ msgstr "الرجاء تسجيل الدخول"

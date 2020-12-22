@@ -9,9 +9,10 @@
         {% elif object.pledge_type == 'D1' %}
             {% include "student/final.html" %}
         {% elif object.pledge_type == 'D' %}
-            {% include "student/dismiss.html" %}
+            {% include "student/dismiss.html" %} 
         {% endif %}
         <br><br>
+        {% if not object.pledge_type == 'D' %}
         {{ form.errors }}
         <br><br>
         <input 
@@ -22,5 +23,6 @@
             TODO: replace next with above
             value="{% translate 'send' %}" /> 
             {% endcomment %}
+        {% endif %}
     </form>
 {% endblock %}
