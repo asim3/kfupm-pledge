@@ -14,7 +14,7 @@ class Pledge(Model):
 
     class PledgeType:
         CONDITION = 'S'
-        FINAL = 'D1'
+        FINAL = 'S1'
         DISMISS = 'D'
 
         @classmethod
