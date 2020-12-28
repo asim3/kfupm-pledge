@@ -50,7 +50,7 @@ class AdminPledge(ModelAdmin):
                 sheet['D%d' % i] = pledge.phone
                 sheet['E%d' % i] = pledge.phone_guardian
 
-        data.update(export_date=datetime.now())
+        queryset.update(export_date=datetime.now())
 
         excel_bytes = save_virtual_workbook(excel_file)
         content_type = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
