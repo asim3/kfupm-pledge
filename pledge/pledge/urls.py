@@ -4,8 +4,9 @@ from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.static import static
 from django.conf import settings
 from django.utils.translation import gettext_lazy as _
-
 from django.contrib.auth.views import LogoutView
+
+from administration.views import DownloadExcelView
 from student.views import HomeView, PledgeView, LoginForAllView
 
 
@@ -19,6 +20,7 @@ admin.site.index_title = _(
 urlpatterns = i18n_patterns(
     path('login/', LoginForAllView.as_view(), name='login'),
     path('logout/', LogoutView.as_view(next_page=reverse_lazy('home')), name='logout'),
+    path('excel/', DownloadExcelView.as_view(), name='excel'),
     path('pledge/', PledgeView.as_view(), name='pledge'),
     path('admin/', admin.site.urls),
     path('', HomeView.as_view(), name='home'),

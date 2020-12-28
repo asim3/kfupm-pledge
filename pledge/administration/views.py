@@ -1,14 +1,28 @@
-from django.views.generic import CreateView
-from .forms import AddStudentsForm
+from django.views.generic import View
+from django.http import HttpResponse
+from django.urls import reverse_lazy
+from django.contrib.auth.mixins import PermissionRequiredMixin
+from django.conf import settings
+from os.path import join
 
 
-class StudentsView(CreateView):
-    """
-    Adding students using an excel file.
+class DownloadExcelView(PermissionRequiredMixin, View):
+    template_name = "student/home.html"
+    success_url = reverse_lazy('home')
+    content_type = None
 
-    - List all student registered in the database, 
-    - download the template excel file.
-    """
-    template_name = "administration/student.html"
-    form_class = AddStudentsForm
-    success_url = "/admin/student/pledge/"
+    def has_permission(self):
+        return self.request.user.is_staff
+
+    def get_excel_template(self, **kwargs):
+        path = join(settings.BASE_DIR, 'administration/static/excel-template.xlsx')
+        return open(path, 'rb')
+
+    def get(self, request, **kwargs):
+        excel_bytes = self.get_excel_template()
+        content_type = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+        filename = 'excel-template.xlsx'
+
+        response = HttpResponse(excel_bytes, content_type=content_type)
+        response['Content-Disposition'] = 'attachment; filename="%s"' % filename
+        return response

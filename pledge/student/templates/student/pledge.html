@@ -4,11 +4,11 @@
 {% block content %}
     <form method="POST">
         {% csrf_token %}
-        {% if object.pledge_type == 'S' %}
+        {% if object.pledge_type == object.PledgeType.CONDITION %}
             {% include "student/condition.html" %}
-        {% elif object.pledge_type == 'D1' %}
+        {% elif object.pledge_type == object.PledgeType.FINAL %}
             {% include "student/final.html" %}
-        {% elif object.pledge_type == 'D' %}
+        {% elif object.pledge_type == object.PledgeType.DISMISS %}
             {% include "student/dismiss.html" %} 
         {% endif %}
         

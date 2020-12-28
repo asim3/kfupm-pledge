@@ -6,28 +6,6 @@ from openpyxl import load_workbook
 from student.models import Pledge
 
 
-def add_new_student(row, pledge_type):
-    kfupmid = row[1].value
-    passwd = str(row[2].value)
-    name = row[3].value
-    tearm = row[4].value
-    gpa = row[5].value if len(row) > 5 else 0.0
-    user = User.objects.create_user(kfupmid, f's{kfupmid}@kfupm.edu.sa',
-                                    passwd, first_name=name)
-    Pledge.objects.create(
-        student=user,
-        pledge_type=pledge_type,
-        kfupm_gpa=gpa,
-        next_tearm=tearm)
-
-
-def add_new_students_from_excel(e_path):
-    e_file = load_workbook(e_path)
-    for sheet in e_file.sheetnames:
-        for (i, row) in enumerate(e_file[sheet].rows):
-            if i < 1:
-                continue
-            add_new_student(row, sheet.capitalize())
 
 
 class AddStudents(Model):
@@ -42,6 +20,39 @@ class AddStudents(Model):
     def get_absolute_url(self):
         return reverse_lazy('admin-student')
 
+        
+    def add_new_student(self, excel_row, pledge_type):
+        kfupmid = str(excel_row[1].value)
+        try:
+            user = User.objects.get(username=kfupmid)
+        except User.DoesNotExist:
+            user = User.objects.create_user(
+                kfupmid, 
+                email=f's{kfupmid}@kfupm.edu.sa',
+                password=str(excel_row[2].value), 
+                first_name=excel_row[3].value)
+            
+        next_tearm = excel_row[4].value
+        kfupm_gpa = excel_row[5].value if len(excel_row) > 5 else 0.0
+        try:
+            Pledge.objects.get(
+                student=user,
+                pledge_type=pledge_type,
+                next_tearm=next_tearm)
+            print('get')
+        except Pledge.DoesNotExist:
+            Pledge.objects.create(
+                student=user,
+                pledge_type=pledge_type,
+                kfupm_gpa=kfupm_gpa,
+                next_tearm=next_tearm)
+            print('add')
+
     def save(self, *args, **kwargs):
         response = super().save(*args, **kwargs)
-        add_new_students_from_excel(self.excel_file.path)
+        excel_file = load_workbook(self.excel_file.path)
+        for sheet in excel_file.sheetnames:
+            for (i, row) in enumerate(excel_file[sheet].rows):
+                if i < 1:
+                    continue
+                self.add_new_student(row, sheet.capitalize())

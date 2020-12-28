@@ -14,7 +14,15 @@
 
     <h1>{% translate "Welcom" %} {{ user.first_name }}</h1>
 
-    {% if object.approved_date is not None %}
+
+    {% if user.is_staff %}
+        <a class="btn btn-outline-primary" href="{% url 'admin:index' %}">
+            {% translate "Admin" %}
+        </a>
+        <a class="btn btn-outline-success" href="{% url 'excel' %}">
+            {% translate "Excel Template" %}
+        </a>
+    {% elif object.approved_date is not None %}
         <div class="alert alert-info">
             {% comment %} TODO: add translation {% endcomment %}
             شكراً لك لقد قمت بالانتهاء من تعبئة نموذج الإقرار بتاريخ
@@ -27,12 +35,6 @@
     {% else %}
     <a class="btn btn-outline-primary" href="{% url 'pledge' %}">
         {% translate "Show Pledge" %}
-    </a>
-    {% endif %}
-
-    {% if user.is_staff %}
-    <a class="btn btn-outline-danger" href="{% url 'logout' %}">
-        {% translate "Logout" %}
     </a>
     {% endif %}
 
