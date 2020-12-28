@@ -1,5 +1,6 @@
 from django.contrib.admin import register, ModelAdmin
 from django.http import HttpResponse
+from django.utils.translation import gettext_lazy as _
 from django.utils.timezone import datetime
 from openpyxl.workbook import Workbook
 from openpyxl.writer.excel import save_virtual_workbook
@@ -10,7 +11,7 @@ from .models import Pledge
 @register(Pledge)
 class AdminPledge(ModelAdmin):
     search_fields = ('student__username', 'student__first_name', 'phone', 'phone_guardian')
-    list_filter = ("is_approved", 'export_date',)
+    list_filter = ('pledge_type', 'next_tearm', 'is_approved', 'export_date',)
     ordering = ('date_added',)
     list_display = (
         'student',
@@ -30,11 +31,13 @@ class AdminPledge(ModelAdmin):
         excel_file.create_sheet(title=Pledge.PledgeType.FINAL)
         excel_file.create_sheet(title=Pledge.PledgeType.DISMISS)
         settings = (
-            ('A', 5, 'No'),
-            ('B', 15, 'KFUPM ID'),
-            ('C', 30, 'Approved Date'),
-            ('D', 15, 'Phone'),
-            ('E', 15, 'Phone Guardian'),)
+            ('A', 5, _('No')),
+            ('B', 15, _('KFUPM ID')),
+            ('C', 30, _('Name')),
+            ('D', 30, _('Approved Date')),
+            ('E', 15, _('Phone')),
+            ('F', 15, _('Phone Guardian')),
+        )
 
         for sheet_name in excel_file.sheetnames:
             sheet = excel_file[sheet_name]
@@ -46,9 +49,10 @@ class AdminPledge(ModelAdmin):
             for i, pledge in enumerate(data, start=2):
                 sheet['A%d' % i] = i - 1
                 sheet['B%d' % i] = pledge.student.username
-                sheet['C%d' % i] = pledge.approved_date
-                sheet['D%d' % i] = pledge.phone
-                sheet['E%d' % i] = pledge.phone_guardian
+                sheet['C%d' % i] = pledge.student.first_name
+                sheet['D%d' % i] = pledge.approved_date
+                sheet['E%d' % i] = pledge.phone
+                sheet['F%d' % i] = pledge.phone_guardian
 
         queryset.update(export_date=datetime.now())
 

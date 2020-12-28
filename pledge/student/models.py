@@ -38,4 +38,4 @@ class Pledge(Model):
     date_added = DateTimeField(_('Date Added'), auto_now_add=True)
     approved_date = DateTimeField(_('Approved Date'), null=True)
     export_date = DateTimeField(_('export Date'), null=True)
-    is_approved = BooleanField(_('Is Approved'), null=True)
+    is_approved = BooleanField(_('Is Approved'), default=False)

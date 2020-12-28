@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-28 12:59+0300\n"
+"POT-Creation-Date: 2020-12-28 14:25+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -74,6 +74,30 @@ msgid ""
 msgstr ""
 "يمكنك إضافة طلاب جدد باستخدام ملف اكسل من خلال النقر على رابط إضافة طالب."
 
+#: student/admin.py:34
+msgid "No"
+msgstr "م"
+
+#: student/admin.py:35
+msgid "KFUPM ID"
+msgstr "الرقم الجامعي"
+
+#: student/admin.py:36
+msgid "Name"
+msgstr "الأسم"
+
+#: student/admin.py:37 student/models.py:39
+msgid "Approved Date"
+msgstr "تاريخ الموافقة"
+
+#: student/admin.py:38 student/models.py:28 student/templates/base/base.html:79
+msgid "Phone"
+msgstr "الجوال"
+
+#: student/admin.py:39 student/models.py:29
+msgid "Phone Guardian"
+msgstr "جوال ولي الأمر"
+
 #: student/models.py:12
 msgid "Pledge"
 msgstr "تعهد"
@@ -110,14 +134,6 @@ msgstr "الفصل التالي"
 msgid "KFUPM GPA"
 msgstr "المعدل المطلوب"
 
-#: student/models.py:28 student/templates/base/base.html:79
-msgid "Phone"
-msgstr "الجوال"
-
-#: student/models.py:29
-msgid "Phone Guardian"
-msgstr "جوال ولي الأمر"
-
 #: student/models.py:31
 msgid "Guardian Relation"
 msgstr "صلة القرابة"
@@ -133,10 +149,6 @@ msgstr "الأسباب الآخرى لتدني الأداء"
 #: student/models.py:38
 msgid "Date Added"
 msgstr "تاريخ التحديث"
-
-#: student/models.py:39
-msgid "Approved Date"
-msgstr "تاريخ الموافقة"
 
 #: student/models.py:40
 msgid "export Date"
