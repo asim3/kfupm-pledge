@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-28 09:15+0300\n"
+"POT-Creation-Date: 2020-12-28 12:59+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,35 +19,35 @@ msgstr ""
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
-#: administration/forms.py:19
+#: administration/forms.py:20
 msgid "Excel file is not valid!"
 msgstr "ملف الإكسل غير صالح!"
 
-#: administration/forms.py:28
-msgid "Student {} is already listed"
-msgstr "الطالب {} موجود مسبقاَ"
-
 #: administration/forms.py:31
-msgid "Student number {} is not valid!"
-msgstr "رقم الطالب {} غير صالح"
+msgid "Student {} pledge is already listed in {} Tearm"
+msgstr "التعهد للطالب {} في الفصل {} موجود مسبقاَ"
 
 #: administration/forms.py:34
+msgid "Row number {} in {} is not valid!"
+msgstr "الصف رقم {} في الصفحة {} غير صالح"
+
+#: administration/forms.py:37
 msgid "Student {} national ID is not valid!"
 msgstr "رقم هوية الطالب {} غير صالح"
 
-#: administration/forms.py:37
+#: administration/forms.py:40
 msgid "Student {} next tearm is not valid!"
 msgstr "رقم الفصل التالي للطالب  {} غير صالح"
 
-#: administration/forms.py:41
+#: administration/forms.py:44
 msgid "Student {} GPA is not valid!"
 msgstr "معدل الطالب {} غير صالح"
 
-#: administration/models.py:37
+#: administration/models.py:15
 msgid "Add Student"
 msgstr "إضافة طالب"
 
-#: administration/models.py:38
+#: administration/models.py:16
 msgid "Add Students"
 msgstr "إضافة الطلاب"
 
@@ -59,15 +59,15 @@ msgstr "العربية"
 msgid "English"
 msgstr "الإنجليزية"
 
-#: pledge/urls.py:12
+#: pledge/urls.py:13
 msgid "Readmission Pledge Forms"
 msgstr "نماذج تعهدات إعادة القبول"
 
-#: pledge/urls.py:13
+#: pledge/urls.py:14
 msgid "Admission"
 msgstr "القبول"
 
-#: pledge/urls.py:15
+#: pledge/urls.py:16
 msgid ""
 "You can add new students using an excel file by clicking on the add student "
 "link."
@@ -82,67 +82,67 @@ msgstr "تعهد"
 msgid "Pledges"
 msgstr "التعهدات"
 
-#: student/models.py:23
+#: student/models.py:16
 msgid "condition"
 msgstr "مشروط"
 
-#: student/models.py:24
+#: student/models.py:17
 msgid "final"
 msgstr "نهائي"
 
-#: student/models.py:25
+#: student/models.py:18
 msgid "dismiss"
 msgstr "إبعاد"
 
-#: student/models.py:28
+#: student/models.py:20
 msgid "student"
 msgstr "طالب"
 
-#: student/models.py:29
+#: student/models.py:21
 msgid "Pledge Type"
 msgstr "نوع التعهد"
 
-#: student/models.py:32
+#: student/models.py:24
 msgid "Next Tearm"
 msgstr "الفصل التالي"
 
-#: student/models.py:33
+#: student/models.py:25
 msgid "KFUPM GPA"
 msgstr "المعدل المطلوب"
 
-#: student/models.py:36 student/templates/base/base.html:79
+#: student/models.py:28 student/templates/base/base.html:79
 msgid "Phone"
 msgstr "الجوال"
 
-#: student/models.py:37
+#: student/models.py:29
 msgid "Phone Guardian"
 msgstr "جوال ولي الأمر"
 
-#: student/models.py:39
+#: student/models.py:31
 msgid "Guardian Relation"
 msgstr "صلة القرابة"
 
-#: student/models.py:41
+#: student/models.py:33
 msgid "Low Performance Reasons"
 msgstr "أسباب تدني الأداء"
 
-#: student/models.py:44
+#: student/models.py:36
 msgid "Low Performance Other Reasons"
 msgstr "الأسباب الآخرى لتدني الأداء"
 
-#: student/models.py:46
+#: student/models.py:38
 msgid "Date Added"
 msgstr "تاريخ التحديث"
 
-#: student/models.py:47
+#: student/models.py:39
 msgid "Approved Date"
 msgstr "تاريخ الموافقة"
 
-#: student/models.py:48
+#: student/models.py:40
 msgid "export Date"
 msgstr "تاريخ التصدير"
 
-#: student/models.py:49
+#: student/models.py:41
 msgid "Is Approved"
 msgstr "هل موافق"
 
@@ -170,11 +170,19 @@ msgstr "عمادة القبول والتسجيل"
 msgid "Welcom"
 msgstr "مرحبا"
 
-#: student/templates/student/home.html:31
+#: student/templates/student/home.html:20
+msgid "Admin"
+msgstr "الإدارة"
+
+#: student/templates/student/home.html:23
+msgid "Excel Template"
+msgstr "نموذج الإكسل"
+
+#: student/templates/student/home.html:39
 msgid "Show Pledge"
 msgstr "عرض التعهد"
 
-#: student/templates/student/home.html:36
+#: student/templates/student/home.html:44
 #: student/templates/student/pledge.html:32
 msgid "Logout"
 msgstr "تسجيل الخروج"
