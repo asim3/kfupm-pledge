@@ -50,7 +50,7 @@ class PledgeForm(ModelForm):
                   'is_approved', ]
         widgets = {
             'low_performance_other_reasons': Textarea(
-                attrs={'class': "mx-4", 'cols': 80, 'rows': 2}),
+                attrs={'class': 'form-control', 'rows': 3}),
         }
 
     def save(self, commit=True):

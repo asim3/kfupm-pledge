@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-22 15:40+0300\n"
+"POT-Creation-Date: 2020-12-28 09:15+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -99,47 +99,51 @@ msgid "student"
 msgstr "طالب"
 
 #: student/models.py:29
-msgid "pledge_type"
+msgid "Pledge Type"
 msgstr "نوع التعهد"
 
 #: student/models.py:32
-msgid "next_tearm"
+msgid "Next Tearm"
 msgstr "الفصل التالي"
 
 #: student/models.py:33
-msgid "kfupm_gpa"
+msgid "KFUPM GPA"
 msgstr "المعدل المطلوب"
 
-#: student/models.py:36
-msgid "phone"
+#: student/models.py:36 student/templates/base/base.html:79
+msgid "Phone"
 msgstr "الجوال"
 
 #: student/models.py:37
-msgid "phone_guardian"
+msgid "Phone Guardian"
 msgstr "جوال ولي الأمر"
 
 #: student/models.py:39
-msgid "guardian_relation"
-msgstr ""
+msgid "Guardian Relation"
+msgstr "صلة القرابة"
 
 #: student/models.py:41
-msgid "low_performance_reasons"
+msgid "Low Performance Reasons"
 msgstr "أسباب تدني الأداء"
 
 #: student/models.py:44
-msgid "low_performance_other_reasons"
+msgid "Low Performance Other Reasons"
 msgstr "الأسباب الآخرى لتدني الأداء"
 
 #: student/models.py:46
-msgid "date_added"
+msgid "Date Added"
 msgstr "تاريخ التحديث"
 
 #: student/models.py:47
-msgid "approved_date"
+msgid "Approved Date"
 msgstr "تاريخ الموافقة"
 
 #: student/models.py:48
-msgid "is_approved"
+msgid "export Date"
+msgstr "تاريخ التصدير"
+
+#: student/models.py:49
+msgid "Is Approved"
 msgstr "هل موافق"
 
 #: student/templates/base/base.html:71
@@ -153,10 +157,6 @@ msgstr "جميع الحقوق محفوظة"
 #: student/templates/base/base.html:75
 msgid "Dhahran, 31261, Kingdom of Saudi Arabia"
 msgstr "الظهران، 31261، المملكة العربية السعودية"
-
-#: student/templates/base/base.html:79
-msgid "Phone"
-msgstr "الجوال"
 
 #: student/templates/base/base.html:86
 msgid "E-mail:"
@@ -175,12 +175,19 @@ msgid "Show Pledge"
 msgstr "عرض التعهد"
 
 #: student/templates/student/home.html:36
+#: student/templates/student/pledge.html:32
 msgid "Logout"
 msgstr "تسجيل الخروج"
 
 #: student/views.py:33
 msgid "Please contact Admission Department to add your pledge form"
 msgstr "يرجى التواصل مع قسم القبول لإضافة تعهدك"
+
+#~ msgid "kfupm_gpa"
+#~ msgstr "المعدل المطلوب"
+
+#~ msgid "phone"
+#~ msgstr "الجوال"
 
 #~ msgid "Healthy"
 #~ msgstr "صحية"

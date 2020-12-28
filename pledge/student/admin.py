@@ -9,7 +9,8 @@ from .models import Pledge
 
 @register(Pledge)
 class AdminPledge(ModelAdmin):
-    search_fields = ('student', 'phone', 'phone_guardian')
+    search_fields = ('student__username', 'student__first_name', 'phone', 'phone_guardian')
+    list_filter = ("is_approved", 'export_date',)
     ordering = ('date_added',)
     list_display = (
         'student',
@@ -20,6 +21,7 @@ class AdminPledge(ModelAdmin):
         'phone',
         'phone_guardian',
         'approved_date',
+        'export_date',
         'is_approved',)
 
     def export_as_excel(self, request, queryset):
@@ -48,7 +50,7 @@ class AdminPledge(ModelAdmin):
                 sheet['D%d' % i] = pledge.phone
                 sheet['E%d' % i] = pledge.phone_guardian
 
-        # data.update(approved_date=datetime.now())
+        data.update(export_date=datetime.now())
 
         excel_bytes = save_virtual_workbook(excel_file)
         content_type = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
@@ -58,4 +60,4 @@ class AdminPledge(ModelAdmin):
         return response
 
     actions = ['export_as_excel']
-    export_as_excel.short_description = "Export as Excel"
+    export_as_excel.short_description = "تصدير إلى ملف إكسل"
