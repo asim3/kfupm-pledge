@@ -65,3 +65,12 @@ class AdminPledge(ModelAdmin):
 
     actions = ['export_as_excel']
     export_as_excel.short_description = "تصدير إلى ملف إكسل"
+
+
+    def export_as_pdf(self, request, queryset):
+        data = queryset.filter(pledge_type=sheet_name)
+        
+
+    actions = ['export_as_pdf']
+    export_as_pdf.short_description = "تصدير إلى ملف PDF"
+    
