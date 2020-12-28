@@ -30,6 +30,12 @@
     </a>
     {% endif %}
 
+    {% if user.is_staff %}
+    <a class="btn btn-outline-danger" href="{% url 'logout' %}">
+        {% translate "Logout" %}
+    </a>
+    {% endif %}
+
     <a class="btn btn-outline-danger" href="{% url 'logout' %}">
         {% translate "Logout" %}
     </a>

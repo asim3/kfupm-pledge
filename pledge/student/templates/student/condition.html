@@ -1,4 +1,4 @@
-عزيزي الطالب {{ object.student.first_name }} ({{ object.student.username }})
+عزيزي الطالب {{ object.student.first_name }} الرقم الجامعي {{ object.student.username }}
 <br><br>
 
 آمل قراءة هذه الرسالة بروية و تركيز.....
@@ -27,9 +27,13 @@
 أسباب تدني الأداء في الفصل الحالي يعود الى: 
 {{ form.low_performance_reasons }}
 
-{{ form.low_performance_other_reasons }}
+<div class="form-group m-4">
+    {{ form.low_performance_other_reasons }}
+</div>
 
-<hr class="mt-4">
+<div class="alert alert-danger m-4 mx-auto max-400">
+    لقد تم تعليق دراستك بالجامعة حتى يتم توقيع التعهد ادناه
+</div>
 
 <h1 class="py-2">إقرار وتعهد فرصة مشروطة</h1>
 
@@ -47,7 +51,7 @@
 </ul>
 
 <span class="text-danger">
-وفي حالة اخفاقي في تحقيق المعدل الفصلي المشروط، يحق للجامعة إيقافي عن الدراسة نهائياً.
+وفي حالة اخفاقي في تحقيق المعدل الفصلي المشروط، سوف يتم إيقافي عن الدراسة نهائياً.
 </span>
 
 <br>
