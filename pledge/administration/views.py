@@ -1,15 +1,11 @@
 from django.views.generic import View
 from django.http import HttpResponse
-from django.urls import reverse_lazy
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.conf import settings
 from os.path import join
 
 
 class DownloadExcelView(PermissionRequiredMixin, View):
-    template_name = "student/home.html"
-    success_url = reverse_lazy('home')
-    content_type = None
 
     def has_permission(self):
         return self.request.user.is_staff
