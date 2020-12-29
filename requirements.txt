@@ -1,5 +1,8 @@
-Django
-django-crispy-forms
-openpyxl
-django-heroku
-gunicorn
+Django==3.1.4
+django-crispy-forms==1.10.0
+openpyxl==3.0.5
+xhtml2pdf==0.2.5
+
+# heroku
+django-heroku==0.3.1
+gunicorn==20.0.4

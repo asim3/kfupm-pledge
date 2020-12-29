@@ -5,6 +5,8 @@ from django.utils.translation import gettext_lazy as _
 from django.utils.timezone import datetime
 from openpyxl.workbook import Workbook
 from openpyxl.writer.excel import save_virtual_workbook
+from io import BytesIO 
+from zipfile import ZipFile
 
 from .models import Pledge
 
@@ -65,8 +67,28 @@ class AdminPledge(ModelAdmin):
         return response
 
     def export_as_pdf(self, request, queryset):
-        self.message_user(request, 'قريبا', messages.WARNING)
-        # data = queryset.filter(approved_date__isnull=False)
+        if 10 < queryset.count():
+            self.message_user(request, 'العدد الاقصى المسموح هو 10', messages.WARNING)
+        else:
+            temporary_file = BytesIO()
+            zip = ZipFile(temporary_file, "a")
+
+            for pledge in queryset:
+                pdf_file = "My Test Text"
+                zip.writestr("id-%s.txt" % pledge.student.username, pdf_file)
+                    
+            # fix for Linux zip files read in Windows
+            for file in zip.filelist:
+                file.create_system = 0
+            zip.close()
+
+
+            filename = 'pledge-%s.zip' % datetime.now().strftime('%s')
+            temporary_file.seek(0)    
+            response = HttpResponse(temporary_file.read(), content_type='application/zip')
+            response['Content-Disposition'] = 'attachment; filename="%s"' % filename
+            temporary_file.close()
+            return response
 
     export_as_excel.short_description = "تصدير إلى ملف إكسل"
     export_as_pdf.short_description = "تصدير إلى ملف PDF"
