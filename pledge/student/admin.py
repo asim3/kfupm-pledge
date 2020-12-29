@@ -1,4 +1,5 @@
 from django.contrib.admin import register, ModelAdmin
+from django.contrib import messages
 from django.http import HttpResponse
 from django.utils.translation import gettext_lazy as _
 from django.utils.timezone import datetime
@@ -63,14 +64,11 @@ class AdminPledge(ModelAdmin):
         response['Content-Disposition'] = 'attachment; filename="%s"' % filename
         return response
 
-    actions = ['export_as_excel']
-    export_as_excel.short_description = "تصدير إلى ملف إكسل"
-
-
     def export_as_pdf(self, request, queryset):
-        data = queryset.filter(pledge_type=sheet_name)
-        
+        self.message_user(request, 'قريبا', messages.WARNING)
+        # data = queryset.filter(approved_date__isnull=False)
 
-    actions = ['export_as_pdf']
+    export_as_excel.short_description = "تصدير إلى ملف إكسل"
     export_as_pdf.short_description = "تصدير إلى ملف PDF"
+    actions = ['export_as_excel', 'export_as_pdf']
     
