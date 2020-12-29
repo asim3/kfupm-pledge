@@ -27,10 +27,22 @@
             {% comment %} TODO: add translation {% endcomment %}
             شكراً لك لقد قمت بالانتهاء من تعبئة نموذج الإقرار بتاريخ
             {{ object.approved_date }}
-            وعليك مراجعة موقع مسجل الجامعة لمعرفة مواعيد التسجيل ونتمنى لك التوفيق
             {% comment %} 
             {% translate "Your pledge was updated successfully on" %} :  
             {% endcomment %}
+
+            {% if object.pledge_type == object.PledgeType.FINAL %}
+
+            و عليك إرسال إفادة ولي الأمر بإطلاعه على أداءك الدراسي  
+            وتأكيد جاهزيتك مع إرفاق صورة هوية ولي الأمر  مذيلة بتوقيع ولي الأمر
+            على البريد الالكتروني admissions@kfupm.edu.sa
+            لتتمكن من التسجيل في الفصل الدراسي القادم
+
+            {% else %}
+
+            وعليك مراجعة موقع مسجل الجامعة لمعرفة مواعيد التسجيل ونتمنى لك التوفيق
+
+            {% endif %}
         </div>
     {% else %}
     <a class="btn btn-outline-primary" href="{% url 'pledge' %}">

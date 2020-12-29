@@ -46,7 +46,7 @@ class AdminPledge(ModelAdmin):
             sheet = excel_file[sheet_name]
             for setting in settings:
                 sheet.column_dimensions[setting[0]].width = setting[1]
-                sheet['%s1' % setting[0]] = setting[2]
+                sheet['%s1' % setting[0]] = str(setting[2])
 
             data = queryset.filter(pledge_type=sheet_name)
             for i, pledge in enumerate(data, start=2):
@@ -70,10 +70,14 @@ class AdminPledge(ModelAdmin):
         if 10 < queryset.count():
             self.message_user(request, 'العدد الاقصى المسموح هو 10', messages.WARNING)
         else:
+            pledges = queryset.filter(is_approved=True)
+            if not pledges:
+                self.message_user(request, 'لم يتم التحديد', messages.WARNING)
+                return None
             temporary_file = BytesIO()
             zip = ZipFile(temporary_file, "a")
 
-            for pledge in queryset:
+            for pledge in pledges:
                 pdf_file = "My Test Text"
                 zip.writestr("id-%s.txt" % pledge.student.username, pdf_file)
                     
@@ -81,7 +85,6 @@ class AdminPledge(ModelAdmin):
             for file in zip.filelist:
                 file.create_system = 0
             zip.close()
-
 
             filename = 'pledge-%s.zip' % datetime.now().strftime('%s')
             temporary_file.seek(0)    
