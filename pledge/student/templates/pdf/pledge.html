@@ -1,0 +1,38 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{% translate "Admission and Registration" %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'base/main.css' %}">
+    <style>
+        body {
+            direction: rtl;
+            text-align: right;
+        }
+        @font-face {
+            font-family: "hacen_tunisia_ltregular";
+            src: url('{% static 'base/HacenTunisiaLt.ttf' %}');
+        }
+    </style>
+</head>
+<body>
+    <pdf:language name="arabic"/>
+
+    {% if object.pledge_type == object.PledgeType.CONDITION %}
+        {% include "student/condition.html" %}
+    {% elif object.pledge_type == object.PledgeType.FINAL %}
+        {% include "student/final.html" %}
+    {% elif object.pledge_type == object.PledgeType.DISMISS %}
+        {% include "student/dismiss.html" %} 
+    {% endif %}
+    
+    <br><br>
+
+    تاريخ الموافقة
+    {{ object.approved_date }}
+    
+</body>    
+</html>
