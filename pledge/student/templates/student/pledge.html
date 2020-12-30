@@ -14,7 +14,7 @@
         
         <br><br>
 
-        {% if not object.pledge_type == 'D' %}
+        {% if not object.pledge_type == object.PledgeType.DISMISS %}
         {{ form.errors }}
         <br><br>
         <input 

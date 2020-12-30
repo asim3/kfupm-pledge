@@ -9,6 +9,7 @@ from io import BytesIO
 from zipfile import ZipFile
 
 from .models import Pledge
+from .utils import template_to_pdf
 
 
 @register(Pledge)
@@ -78,8 +79,8 @@ class AdminPledge(ModelAdmin):
             zip = ZipFile(temporary_file, "a")
 
             for pledge in pledges:
-                pdf_file = "My Test Text"
-                zip.writestr("id-%s.txt" % pledge.student.username, pdf_file)
+                pdf_file = template_to_pdf('pdf/pledge.html', {'object': pledge})
+                zip.writestr("id-%s.pdf" % (pledge.student.username,), pdf_file.read())
                     
             # fix for Linux zip files read in Windows
             for file in zip.filelist:
