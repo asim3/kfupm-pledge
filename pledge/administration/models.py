@@ -14,18 +14,19 @@ def extract_excel_file(excel_file_path):
             if i < 1:
                 continue
             add_new_student(row, sheet.capitalize())
-    
+
+
 def add_new_student(excel_row, pledge_type):
     kfupmid = str(excel_row[1].value)
     try:
         user = User.objects.get(username=kfupmid)
     except User.DoesNotExist:
         user = User.objects.create_user(
-            kfupmid, 
+            kfupmid,
             email=f's{kfupmid}@kfupm.edu.sa',
-            password=str(excel_row[2].value), 
+            password=str(excel_row[2].value),
             first_name=excel_row[3].value)
-        
+
     next_tearm = excel_row[4].value
     kfupm_gpa = excel_row[5].value if len(excel_row) > 5 else 0.0
     try:

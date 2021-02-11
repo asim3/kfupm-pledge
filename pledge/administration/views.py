@@ -11,7 +11,8 @@ class DownloadExcelView(PermissionRequiredMixin, View):
         return self.request.user.is_staff
 
     def get_excel_template(self, **kwargs):
-        path = join(settings.BASE_DIR, 'administration/static/excel-template.xlsx')
+        path = join(settings.BASE_DIR,
+                    'administration/static/excel-template.xlsx')
         return open(path, 'rb')
 
     def get(self, request, **kwargs):
