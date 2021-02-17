@@ -1,0 +1,23 @@
+{% extends "admin/base_site.html" %}
+{% load i18n admin_urls static %}
+
+
+{% block title %}
+    Reports
+{% endblock %}
+
+
+{% block content %}
+<p><b>Kindly select from the list:</b></p>
+    {% if object %}
+        <ul>
+        {% for obj in object %}
+            <li>
+                <a href="{% url 'print-reports' view.kwargs.tearm obj.0 %}">
+                    {{ obj.1 }}
+                </a>
+            </li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}

@@ -3,10 +3,11 @@ from django.urls import reverse_lazy
 from django.http import HttpResponseRedirect
 from django.utils.translation import gettext_lazy as _
 from django.contrib.messages.views import SuccessMessageMixin, messages
-from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView
 
 from .forms import PledgeForm, AuthenticationForm
+from .models import Pledge
 
 
 class HomeView(LoginRequiredMixin, DetailView):
@@ -44,13 +45,3 @@ class LoginForAllView(LoginView):
         if self.request.user.is_staff:
             return reverse_lazy("admin:index")
         return reverse_lazy("pledge")
-
-
-class ReportsView(PermissionRequiredMixin, DetailView):
-    template_name = "reports/list.html"
-
-    def has_permission(self):
-        return self.request.user.is_staff
-
-    def get_object(self):
-        return self.request.user.get_full_name()

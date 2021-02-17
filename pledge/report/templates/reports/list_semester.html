@@ -1,0 +1,23 @@
+{% extends "admin/base_site.html" %}
+{% load i18n admin_urls static %}
+
+
+{% block title %}
+    Reports
+{% endblock %}
+
+
+{% block content %}
+<p><b>Kindly select a semester:</b></p>
+    {% if object %}
+        <ul>
+        {% for obj in object %}
+            <li>
+                <a href="{% url 'reasons-reports' obj.next_tearm %}">
+                    {{ obj.next_tearm }}
+                </a>
+            </li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}
