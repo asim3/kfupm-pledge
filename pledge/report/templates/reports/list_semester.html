@@ -8,16 +8,27 @@
 
 
 {% block content %}
-<p><b>Kindly select a semester:</b></p>
-    {% if object %}
-        <ul>
-        {% for obj in object %}
-            <li>
-                <a href="{% url 'reasons-reports' obj.next_tearm %}">
-                    {{ obj.next_tearm }}
-                </a>
-            </li>
-        {% endfor %}
-        </ul>
-    {% endif %}
+<h1>Kindly select a semester:</h1>
+
+<div class="module">
+    <table>
+        <caption>
+            <a href="{% url 'admin:student_pledge_changelist' %}" class="section">semester</a>
+        </caption>
+    
+        <tbody>
+        {% if object %}
+            {% for obj in object %}
+                <tr class="model-group">
+                    <th scope="row">
+                        <a href="{% url 'reasons-reports' obj.next_tearm %}">
+                            {{ obj.next_tearm }}
+                        </a>
+                    </th>
+                </tr>
+            {% endfor %}
+        {% endif %}
+        </tbody>
+    </table>
+</div>
 {% endblock %}

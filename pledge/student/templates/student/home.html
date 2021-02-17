@@ -16,7 +16,7 @@
 
 
     {% if user.is_staff %}
-        <a class="btn btn-outline-primary" href="{% url 'admin:index' %}">
+        <a class="btn btn-outline-primary" href="{% url 'admin:student_pledge_changelist' %}">
             {% translate "Admin" %}
         </a>
         <a class="btn btn-outline-success" href="{% url 'excel' %}">
